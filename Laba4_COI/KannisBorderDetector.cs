@@ -14,7 +14,7 @@ namespace Laba4_COI
     {
         Form1 main;
 
-        int sigma;
+        float sigma;
         int firstFlag, secondFlag;
         int selector;
 
@@ -41,26 +41,23 @@ namespace Laba4_COI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sigma = trackBar1.Value;
+            sigma = trackBar1.Value/10.0f;
             firstFlag = trackBar2.Value;
             secondFlag = trackBar3.Value;
             selector = FindSelector();
             AlteredImageByte = (byte[,,])OriginalImageByte.Clone();
-                //SmothingImage(OriginalImageByte);
             FindBorder(selector);
 
             main.setAlteredImageByte(AlteredImageByte);
             main.setPictureBox2(AlteredImageByte);
-            this.Close();
         }
         private int FindSelector()
         {
             if (radioButton1.Checked)
                 return 1;
-            else if (radioButton2.Checked)
+            if (radioButton2.Checked)
                 return 2;
-            else 
-                return 3;
+            return 3;
         }
 
         private byte[,,] SmothingImage(byte[,,] byteMass)

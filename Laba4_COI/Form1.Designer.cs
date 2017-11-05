@@ -36,11 +36,7 @@
             this.лапласианToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дискретныйЛапласианToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расширенныйЛапласианToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.фильтрРобертсаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрСобеляToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.операторПревитаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.операторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.операторУоллесаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистическийМетодToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.детекторГраницКанниToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -91,11 +87,7 @@
             // 
             this.выделениеКонтуровToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.лапласианToolStripMenuItem,
-            this.фильтрРобертсаToolStripMenuItem,
             this.фильтрСобеляToolStripMenuItem,
-            this.операторПревитаToolStripMenuItem,
-            this.операторToolStripMenuItem,
-            this.операторУоллесаToolStripMenuItem,
             this.статистическийМетодToolStripMenuItem,
             this.детекторГраницКанниToolStripMenuItem});
             this.выделениеКонтуровToolStripMenuItem.Enabled = false;
@@ -126,40 +118,12 @@
             this.расширенныйЛапласианToolStripMenuItem.Text = "Расширенный лапласиан";
             this.расширенныйЛапласианToolStripMenuItem.Click += new System.EventHandler(this.расширенныйЛапласианToolStripMenuItem_Click);
             // 
-            // фильтрРобертсаToolStripMenuItem
-            // 
-            this.фильтрРобертсаToolStripMenuItem.Name = "фильтрРобертсаToolStripMenuItem";
-            this.фильтрРобертсаToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.фильтрРобертсаToolStripMenuItem.Text = "Фильтр Робертса";
-            this.фильтрРобертсаToolStripMenuItem.Click += new System.EventHandler(this.фильтрРобертсаToolStripMenuItem_Click);
-            // 
             // фильтрСобеляToolStripMenuItem
             // 
             this.фильтрСобеляToolStripMenuItem.Name = "фильтрСобеляToolStripMenuItem";
             this.фильтрСобеляToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.фильтрСобеляToolStripMenuItem.Text = "Фильтр Собеля";
             this.фильтрСобеляToolStripMenuItem.Click += new System.EventHandler(this.фильтрСобеляToolStripMenuItem_Click);
-            // 
-            // операторПревитаToolStripMenuItem
-            // 
-            this.операторПревитаToolStripMenuItem.Name = "операторПревитаToolStripMenuItem";
-            this.операторПревитаToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.операторПревитаToolStripMenuItem.Text = "Оператор Превита";
-            this.операторПревитаToolStripMenuItem.Click += new System.EventHandler(this.операторПревитаToolStripMenuItem_Click);
-            // 
-            // операторToolStripMenuItem
-            // 
-            this.операторToolStripMenuItem.Name = "операторToolStripMenuItem";
-            this.операторToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.операторToolStripMenuItem.Text = "Оператор Кирша";
-            this.операторToolStripMenuItem.Click += new System.EventHandler(this.операторToolStripMenuItem_Click);
-            // 
-            // операторУоллесаToolStripMenuItem
-            // 
-            this.операторУоллесаToolStripMenuItem.Name = "операторУоллесаToolStripMenuItem";
-            this.операторУоллесаToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.операторУоллесаToolStripMenuItem.Text = "Оператор Уоллеса";
-            this.операторУоллесаToolStripMenuItem.Click += new System.EventHandler(this.операторУоллесаToolStripMenuItem_Click);
             // 
             // статистическийМетодToolStripMenuItem
             // 
@@ -262,11 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem лапласианToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дискретныйЛапласианToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem расширенныйЛапласианToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem фильтрРобертсаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фильтрСобеляToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem операторПревитаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem операторToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem операторУоллесаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem детекторГраницКанниToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистическийМетодToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

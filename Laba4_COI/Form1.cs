@@ -90,7 +90,6 @@ namespace Laba4_COI
             pictureBox2.Image = AlteredImage;
         }
         //------Пункт меню Дискретный лапласиан
-
         private void расширенныйЛапласианToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AlteredImageByte = new byte[3, height, width];
@@ -105,22 +104,6 @@ namespace Laba4_COI
             pictureBox2.Image = AlteredImage;
         }
         //------Пункт меню Расширенный лапласиан
-
-        private void фильтрРобертсаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AlteredImageByte = new byte[3, height, width];
-            for (int y = 1; y < height - 1; y++)
-                for (int x = 1; x < width - 1; x++)
-                {
-                    AlteredImageByte[0, y, x] = RobertsFilter(OriginalImageByte, y, x, 0);
-                    AlteredImageByte[1, y, x] = RobertsFilter(OriginalImageByte, y, x, 1);
-                    AlteredImageByte[2, y, x] = RobertsFilter(OriginalImageByte, y, x, 2);
-                }
-            AlteredImage = toBitmap(AlteredImageByte);
-            pictureBox2.Image = AlteredImage;            
-        }
-        //------Пункт меню Фильтр Робертса
-
         private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AlteredImageByte = new byte[3, height, width];
@@ -135,52 +118,6 @@ namespace Laba4_COI
             pictureBox2.Image = AlteredImage;    
         }
         //------Пункт меню Фильтр Собеля
-
-        private void операторПревитаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AlteredImageByte = new byte[3, height, width];
-            for (int y = 1; y < height - 1; y++)
-                for (int x = 1; x < width - 1; x++)
-                {
-                    AlteredImageByte[0, y, x] = PrevitsOper(OriginalImageByte, y, x, 0);
-                    AlteredImageByte[1, y, x] = PrevitsOper(OriginalImageByte, y, x, 1);
-                    AlteredImageByte[2, y, x] = PrevitsOper(OriginalImageByte, y, x, 2);
-                }
-            AlteredImage = toBitmap(AlteredImageByte);
-            pictureBox2.Image = AlteredImage;    
-        }
-        //------Пункт меню Оператор Превита
-
-        private void операторToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AlteredImageByte = new byte[3, height, width];
-            for (int y = 1; y < height - 1; y++)
-                for (int x = 1; x < width - 1; x++)
-                {
-                    AlteredImageByte[0, y, x] = KirshsOper(OriginalImageByte, y, x, 0);
-                    AlteredImageByte[1, y, x] = KirshsOper(OriginalImageByte, y, x, 1);
-                    AlteredImageByte[2, y, x] = KirshsOper(OriginalImageByte, y, x, 2);
-                }
-            AlteredImage = toBitmap(AlteredImageByte);
-            pictureBox2.Image = AlteredImage;    
-        }
-        //------Пункт меню Оператор Кирша
-
-        private void операторУоллесаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AlteredImageByte = new byte[3, height, width];
-            for (int y = 1; y < height - 1; y++)
-                for (int x = 1; x < width - 1; x++)
-                {
-                    AlteredImageByte[0, y, x] = UollesesOper(OriginalImageByte, y, x, 0);
-                    AlteredImageByte[1, y, x] = UollesesOper(OriginalImageByte, y, x, 1);
-                    AlteredImageByte[2, y, x] = UollesesOper(OriginalImageByte, y, x, 2);
-                }
-            AlteredImage = toBitmap(AlteredImageByte);
-            pictureBox2.Image = AlteredImage;
-        }
-        //------Пункт меню Оператор Уоллеса
-
         private void статистическийМетодToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AlteredImageByte = new byte[3, height, width];
@@ -246,65 +183,13 @@ namespace Laba4_COI
             pixel = toByte(w);
             return pixel;
         }
-        //----Фильтр Робертса
-        public byte RobertsFilter(byte[,,] byteMass,int y, int x, int chennal)
-        {
-            int pixel = Math.Abs(byteMass[chennal, y + 1, x + 1] - byteMass[chennal, y, x]) +
-                Math.Abs(byteMass[chennal, y + 1, x] - byteMass[chennal, y, x + 1]);
-            return toByte(pixel);
-        }
         //----Фильтр Собеля
         public byte SobelsFilter(byte[,,] byteMass,int y, int x, int chennal)
         {
-            //int pixel = Math.Abs((byteMass[chennal, y + 1, x - 1] + 2 * byteMass[chennal, y + 1, x] + byteMass[chennal, y + 1, x + 1]) -
-            //    (byteMass[chennal, y - 1, x - 1] + 2 * byteMass[chennal, y - 1, x] + byteMass[chennal, y - 1, x + 1])) +
-            //    Math.Abs((byteMass[chennal, y - 1, x + 1] + 2 * byteMass[chennal, y, x + 1] + byteMass[chennal, y + 1, x + 1]) -
-            //    (byteMass[chennal, y - 1, x - 1] + 2 * byteMass[chennal, y, x - 1] + byteMass[chennal, y + 1, x - 1]));
             int[,] firstMask = new int[,] { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
             int[,] secondMask = new int[,] { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
             int pixel = Math.Abs(MultMatrix(firstMask, byteMass, y, x, chennal, 3)) +
                 Math.Abs(MultMatrix(secondMask, byteMass, y, x, chennal, 3));
-            return toByte(pixel);
-        }
-
-        //----Оператор Превита
-        public byte PrevitsOper(byte[,,] byteMass, int y, int x, int chennal)
-        {
-            int pixel;
-            int[,] Hx = new int[,] { { 1, 0, -1 }, { 1, 0, -1 }, { 1, 0, -1 } };
-            int[,] Hy = new int[,] { { -1, -1, -1 }, { 0, 0, 0 }, { 1, 1, 1 } };
-            int Gx = MultMatrix(Hx, byteMass, y, x, chennal, 3),
-                Gy = MultMatrix(Hy, byteMass, y, x, chennal, 3);
-            if (Gx >= Gy) pixel = Gx;
-            else pixel = Gy;
-            return toByte(pixel);
-        }
-
-        //----Оператор Кирша
-        public byte KirshsOper(byte[,,] byteMass, int y, int x, int chennal)
-        {
-            int[,] Matrix = new int[,] { { 5, 5, 5 }, { -3, 0, -3 }, { -3, -3, -3 } };
-            int[] r = new int[8];
-            for(int i =0; i <8; i++)
-            {
-                r[i] = MultMatrix(Matrix, byteMass, y, x, chennal, 3);
-                if(i!=7)
-                    Matrix = RotateMatrix(Matrix);
-            }
-            return toByte(r.Max());
-        }
-
-        //----Оператор Уоллеса
-        public byte UollesesOper(byte[, ,] byteMass, int y, int x, int chennal)
-        {
-            double multi = 1;
-            for(int i =-1; i<=1;i++)
-                for(int j=-1;j<=1;j++)
-                {
-                    if(Math.Abs(i+j)%2==1)
-                        multi *= Convert.ToDouble(byteMass[chennal, y, x] + 1) / (byteMass[chennal, y + i, x + j]+1);
-                }
-            int pixel= (int)(1000*Math.Log(multi)/4);
             return toByte(pixel);
         }
         //----Статистческий метод
