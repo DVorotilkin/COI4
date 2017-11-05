@@ -1,4 +1,4 @@
-﻿namespace Laba1_COI
+﻿namespace Laba4_COI
 {
     partial class KannisBorderDetector
     {

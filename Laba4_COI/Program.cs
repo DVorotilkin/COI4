@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Laba1_COI
+namespace Laba4_COI
 {
     static class Program
     {

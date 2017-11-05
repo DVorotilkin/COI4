@@ -7,8 +7,8 @@
     <ProjectGuid>{0A674C11-CCA3-410A-83EB-F2BB9C5510C7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Laba2_COI</RootNamespace>
-    <AssemblyName>Laba2_COI</AssemblyName>
+    <RootNamespace>Laba4_COI</RootNamespace>
+    <AssemblyName>Laba4_COI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,29 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrightCut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BrightCut.Designer.cs">
-      <DependentUpon>BrightCut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ContrastScalingDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ContrastScalingDialog.Designer.cs">
-      <DependentUpon>ContrastScalingDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Histogramm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Histogramm.Designer.cs">
-      <DependentUpon>Histogramm.cs</DependentUpon>
     </Compile>
     <Compile Include="KannisBorderDetector.cs">
       <SubType>Form</SubType>
@@ -75,55 +57,13 @@
     <Compile Include="KannisBorderDetector.Designer.cs">
       <DependentUpon>KannisBorderDetector.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kriterii.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Kriterii.Designer.cs">
-      <DependentUpon>Kriterii.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MedFilt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MedFilt.Designer.cs">
-      <DependentUpon>MedFilt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Noise.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Noise.Designer.cs">
-      <DependentUpon>Noise.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sigma-Filter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sigma-Filter.Designer.cs">
-      <DependentUpon>Sigma-Filter.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="BrightCut.resx">
-      <DependentUpon>BrightCut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContrastScalingDialog.resx">
-      <DependentUpon>ContrastScalingDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Histogramm.resx">
-      <DependentUpon>Histogramm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KannisBorderDetector.resx">
       <DependentUpon>KannisBorderDetector.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kriterii.resx">
-      <DependentUpon>Kriterii.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MedFilt.resx">
-      <DependentUpon>MedFilt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Noise.resx">
-      <DependentUpon>Noise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,9 +75,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sigma-Filter.resx">
-      <DependentUpon>Sigma-Filter.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
